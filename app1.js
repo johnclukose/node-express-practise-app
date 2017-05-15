@@ -1,7 +1,11 @@
 var express = require('express');
 var app = express();
+var routes = require('./routes');
 
 app.set('view engine', 'ejs');
+
+// locals data is shared across all templates/pages
+app.locals.pagetitle = "Page Title";
 
 app.get('',function(req, res) {
     res.render('default1', {
@@ -9,6 +13,8 @@ app.get('',function(req, res) {
         users: ['Ray', 'Ryan']
     });
 });
+
+app.get('/about',routes.about);
 
 app.get('*', function(req, res) {
     res.send('Bad Request');

@@ -6,7 +6,7 @@
   <body>
     <% include partials/page/header.ejs %>
     <div class="container">
-        <h1>Hello, world!</h1>
+        <h1><%= title %> <%= pagetitle %></h1>
         <% for(var i=0; i<users.length; i++) { %>
             <li><%= users[i] %></li>
         <% } %>
